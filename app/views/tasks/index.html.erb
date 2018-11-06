@@ -1,2 +1,13 @@
-
 <h1>Tasks</h1>
+
+<p class="btn btn-primary"> <%= link_to "Create a new task", tasks_new_path %> </p>
+
+<ul class="list-group">
+<% @tasks.each do |task| %>
+  <li class="list-group-item"><%= check_box_tag :completed, "completed", task.completed %>
+  <p class="title_text"> <%= link_to task.title, task_path(task)%> </p>
+  <p class="btn btn-danger"> <%= link_to "Delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></p></li>
+<% end %>
+</ul>

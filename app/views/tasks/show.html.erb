@@ -1,0 +1,13 @@
+<h1> Title: <%= @task.title %></h1>
+
+<p>Please read what you have to do to complete this task:</p>
+<br><hr><hr>
+<%= @task.details %>
+<hr><hr><br>
+<p>Edit it below:</p>
+
+
+<%= render 'form', task: @task %>
+<br>
+<p>Or go back to the main page:</p>
+<p class="btn btn-success"><%= link_to "Go back", tasks_path %></p>
